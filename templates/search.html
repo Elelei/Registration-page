@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Contacts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="search-container">
+        <h1>Search for a Contact</h1>
+        <p>Enter the registration number to find the contact details.</p>
+        <form method="POST" action="{{ url_for('search') }}">
+            <div class="form-group">
+                <label for="reg_number">Registration Number:</label>
+                <input type="text" id="reg_number" name="reg_number" required>
+            </div>
+            <button type="submit" class="btn-search">Search</button>
+        </form>
+        <div class="links">
+            <p><a href="{{ url_for('contact_form') }}">Add a new contact</a></p>
+        </div>
+    </div>
+</body>
+</html>
